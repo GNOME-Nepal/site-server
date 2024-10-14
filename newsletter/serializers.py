@@ -1,9 +1,7 @@
 from rest_framework import serializers
-from . import models
+from .models import NewsletterSubscriber
 
-
-class NewsletterSubscriber(serializers.ModelSerializer):
-
+class NewsletterSubscriberSerializer(serializers.ModelSerializer):
     class Meta:
-        model = models.NewsletterSubscriber
-        fields = ["email"]
+        model = NewsletterSubscriber
+        fields = ['email', 'name', 'is_active', 'subscription_date', 'last_sent', 'unsubscribe_token']
