@@ -1,5 +1,5 @@
 from rest_framework.generics import CreateAPIView, UpdateAPIView
-from django.http import HttpResponse
+from rest_framework.response import Response
 from .models import NewsletterSubscriber
 from .serializers import NewsletterSubscriberSerializer
 
@@ -18,6 +18,10 @@ class UnsubscribeView(UpdateAPIView):
 
     def update(self, request, *args, **kwargs):
         subscriber = self.get_object()
-        subscriber.is_active = False  # Mark subscriber as inactive
+        subscriber.is_active = False
         subscriber.save()
-        return HttpResponse("You have successfully unsubscribed.")
+        return Response(
+            {
+                "message": "Unsubscribed Successfully",
+            }
+        )

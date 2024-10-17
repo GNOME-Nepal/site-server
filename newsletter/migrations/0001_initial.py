@@ -31,24 +31,6 @@ class Migration(migrations.Migration):
                         unique=True,
                     ),
                 ),
-                ("is_active", models.BooleanField(default=True)),
-                (
-                    "name",
-                    models.CharField(max_length=200, null=True, blank=True),
-                ),
-                (
-                    "unsubscribe_token",
-                    models.CharField(
-                        default=uuid.uuid4, max_length=100, unique=True
-                    ),
-                ),
-                (
-                    "subscription_date",
-                    models.DateTimeField(
-                        default=django.utils.timezone.now, editable=False
-                    ),
-                ),
-                ("last_sent", models.DateTimeField(null=True, blank=True)),
             ],
         ),
     ]
