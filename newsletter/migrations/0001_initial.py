@@ -15,14 +15,40 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name="NewsletterSubscriber",
             fields=[
-                ('created_at', models.DateTimeField(default=django.utils.timezone.now, editable=False)),
-                ('updated_at', models.DateTimeField(auto_now=True)),
-                ('email', models.EmailField(max_length=300, primary_key=True, serialize=False, unique=True)),
-                ('is_active', models.BooleanField(default=True)),  
-                ('name', models.CharField(max_length=200, null=True, blank=True)),
-                ('unsubscribe_token', models.CharField(default=uuid.uuid4, max_length=100, unique=True)),  
-                ('subscription_date', models.DateTimeField(default=django.utils.timezone.now, editable=False)), 
-                ('last_sent', models.DateTimeField(null=True, blank=True)),  
+                (
+                    "created_at",
+                    models.DateTimeField(
+                        default=django.utils.timezone.now, editable=False
+                    ),
+                ),
+                ("updated_at", models.DateTimeField(auto_now=True)),
+                (
+                    "email",
+                    models.EmailField(
+                        max_length=300,
+                        primary_key=True,
+                        serialize=False,
+                        unique=True,
+                    ),
+                ),
+                ("is_active", models.BooleanField(default=True)),
+                (
+                    "name",
+                    models.CharField(max_length=200, null=True, blank=True),
+                ),
+                (
+                    "unsubscribe_token",
+                    models.CharField(
+                        default=uuid.uuid4, max_length=100, unique=True
+                    ),
+                ),
+                (
+                    "subscription_date",
+                    models.DateTimeField(
+                        default=django.utils.timezone.now, editable=False
+                    ),
+                ),
+                ("last_sent", models.DateTimeField(null=True, blank=True)),
             ],
         ),
     ]

@@ -4,36 +4,41 @@ from django.db import migrations, models
 import django.utils.timezone
 import uuid
 
+
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('newsletter', '0001_initial'),
+        ("newsletter", "0001_initial"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='newslettersubscriber',
-            name='is_active',
+            model_name="newslettersubscriber",
+            name="is_active",
             field=models.BooleanField(default=True),
         ),
         migrations.AddField(
-            model_name='newslettersubscriber',
-            name='last_sent',
+            model_name="newslettersubscriber",
+            name="last_sent",
             field=models.DateTimeField(blank=True, null=True),
         ),
         migrations.AddField(
-            model_name='newslettersubscriber',
-            name='name',
+            model_name="newslettersubscriber",
+            name="name",
             field=models.CharField(blank=True, max_length=200, null=True),
         ),
         migrations.AddField(
-            model_name='newslettersubscriber',
-            name='subscription_date',
-            field=models.DateTimeField(default=django.utils.timezone.now, editable=False),
+            model_name="newslettersubscriber",
+            name="subscription_date",
+            field=models.DateTimeField(
+                default=django.utils.timezone.now, editable=False
+            ),
         ),
         migrations.AddField(
-            model_name='newslettersubscriber',
-            name='unsubscribe_token',
-            field=models.CharField(default=uuid.uuid4, max_length=100, unique=True),
+            model_name="newslettersubscriber",
+            name="unsubscribe_token",
+            field=models.CharField(
+                default=uuid.uuid4, max_length=100, unique=True
+            ),
         ),
     ]

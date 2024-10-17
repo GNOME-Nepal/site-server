@@ -14,7 +14,7 @@ class NewsletterCreateView(CreateAPIView):
 class UnsubscribeView(UpdateAPIView):
     queryset = NewsletterSubscriber.objects.all()
     serializer_class = NewsletterSubscriberSerializer
-    lookup_field = 'unsubscribe_token'
+    lookup_field = "unsubscribe_token"
 
     def update(self, request, *args, **kwargs):
         subscriber = self.get_object()
