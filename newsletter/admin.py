@@ -1,5 +1,6 @@
 from django.contrib import admin
-from . import models
+from .models import NewsletterSubscriber
 
-# Register your models here.
-admin.site.register(models.NewsletterSubscriber)
+@admin.register(NewsletterSubscriber)
+class NewsletterSubscriberAdmin(admin.ModelAdmin):
+    list_display = ['email', 'is_active', 'subscription_date', 'unsubscribe_token']
