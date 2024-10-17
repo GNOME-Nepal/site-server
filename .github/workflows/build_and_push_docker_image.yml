@@ -26,9 +26,15 @@ jobs:
 
       - name: Build the Docker image
         run: |
+ Check failure on line 28 in .github/workflows/build_and_push_docker_image.yml
+
+
+GitHub Actions
+/ Build and Push Docker Image
+Invalid workflow file
+
+The workflow is not valid. .github/workflows/build_and_push_docker_image.yml (Line: 28, Col: 14): Unexpected symbol: '$REPOSITORY_LC'. Located at position 1 within expression: $REPOSITORY_LC .github/workflows/build_and_push_docker_image.yml (Line: 33, Col: 14): Unexpected symbol: '$REPOSITORY_LC'. Located at position 1 within expression: $REPOSITORY_LC
           docker build . -t ghcr.io/${{ $REPOSITORY_LC }}/gnome-nepal-backend:latest
-
-
       - name: Push the Docker image
         run: |
           docker push ghcr.io/${{ $REPOSITORY_LC }}/gnome-nepal-backend:latest
