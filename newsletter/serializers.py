@@ -11,6 +11,5 @@ class NewsletterSubscriberSerializer(serializers.ModelSerializer):
         fields = [
             "email",
             "is_active",
-            "subscription_date",
             "unsubscribe_token",
         ]

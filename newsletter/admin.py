@@ -7,6 +7,5 @@ class NewsletterSubscriberAdmin(admin.ModelAdmin):
     list_display = [
         "email",
         "is_active",
-        "subscription_date",
         "unsubscribe_token",
     ]
