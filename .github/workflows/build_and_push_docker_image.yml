@@ -18,9 +18,9 @@ jobs:
 
       - name: Build the Docker image
         run: |
-          docker build . -t ghcr.io/gnome-nepal/gnome-nepal-backend:latest
+          docker build . -t ghcr.io/${{ github.repository.lowercase}}/gnome-nepal-backend:latest
 
 
       - name: Push the Docker image
         run: |
-          docker push ghcr.io/gnome-nepal/gnome-nepal-backend:latest
+          docker push ghcr.io/${{ github.repository.lowercase }}/gnome-nepal-backend:latest
