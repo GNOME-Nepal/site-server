@@ -121,7 +121,7 @@ To contribute to this project, follow these steps:
 4. **Push your branch** to your forked repository.
 5. **Submit a pull request** detailing your changes.
 
-*(Note: Before contributing read the detailed [guidelines](CONTRIBUTING) for contributions)*
+*(Note: Before contributing read the detailed [guidelines](CONTRIBUTING.md) for contributions)*
 
 
 ## License
