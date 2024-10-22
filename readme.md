@@ -94,7 +94,7 @@ To get started with Djate:
 
 3. **Open your browser at** `http://localhost:8000` **to view the web app.**
 
-4. **Access Flower for task monitoring at** `http://localhost:7777` **using the default credentials:**
+4. **Access Flower for task monitoring at** `http://localhost:7777` **using the default credentials:[Only when you run via docker compose]**
    - **Username**: `admin`
    - **Password**: `pswd`
 

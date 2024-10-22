@@ -70,7 +70,7 @@ You can sync the fork using this way in github's UI
     Inside the virtual environment, use the following commands
     ```
     python -m black . # this will format your code to meet our coding standards
-    python -m flake8 . # this will tell you about unused variables and linitng issues that you will need to improve.
+    python -m flake8 # this will tell you about unused variables and linitng issues that you will need to improve.
     ```
 
     Please note that our workflow will ignore your changes if it doesn't run or linting is missing. If you want any help with that, please create a PR and then ask the help from maintainer.
