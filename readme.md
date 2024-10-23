@@ -37,6 +37,12 @@ The GNOME Nepal backend server project is intended to make Django app setup and 
 
 Djate is an integral part of the GNOME Nepal backend server. It serves as a simple and efficient Django template to assist in creating backend services. Djate focuses on eliminating the complexity of setting up essential components such as `Django REST Framework`, `Celery`, `celery-backend`, `flower` and `Redis` by automating these tasks through a single command.
 
+### Code Architecture
+
+Djate follows a standard Django project structure with `apps` and `manage.py` in the root directory. Each app contains components such as `views.py`, `models.py`, and `urls.py`, while Celery tasks are defined in `tasks.py` for each application.
+
+The code architecture leverages Django REST Framework (DRF) generics and viewsets for building APIs efficiently, ensuring modularity and efficiency in development.
+
 
 ### Physical Architecture
 
@@ -74,6 +80,8 @@ Djate simplifies Django app setup by integrating:
 - **Redis**: As a message broker for Celery.
 - **Flower**: A web-based tool for monitoring Celery tasks.
 - **Docker**: Used to containerize the application for easy deployment and testing.
+
+
 
 ## Getting Started
 

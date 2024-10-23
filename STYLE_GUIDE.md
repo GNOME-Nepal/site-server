@@ -4,18 +4,11 @@ This style guide provides guidelines for writing and formatting code, commit mes
 
 
 ## Table of Contents
-- [Code Archiecture](#code-architecture)
 - [General Guidelines](#general-guidelines)
 - [Commit Message Conventions](#commit-message-conventions)
 - [Branch Naming Conventions](#branch-naming-conventions)
 - [Code Formatting](#code-formatting)
 
-
-## Code Architecture
-
-Djate follows a standard Django project structure with `apps` and `manage.py` in the root directory. Each app contains components such as `views.py`, `models.py`, and `urls.py`, while Celery tasks are defined in `tasks.py` for each application.
-
-The code architecture leverages Django REST Framework (DRF) generics and viewsets for building APIs efficiently, ensuring modularity and efficiency in development.
 
 ## General Guidelines
 
@@ -23,7 +16,8 @@ The code architecture leverages Django REST Framework (DRF) generics and viewset
 - Use meaningful variable and function names.
 - Adhere to the language-specific best practices.
 - Ensure your code is modular and reusable.
-- Avoid code duplication.
+- Avoid code duplication and hard coded values
+- Include docstrings for all functions, classes, and modules.
 
 ## Commit Message Conventions
 
@@ -62,6 +56,7 @@ Branch names should be descriptive and follow a consistent pattern. Use the foll
   - `fix/` for bug fixes
   - `chore/` for maintenance tasks
   - `docs/` for documentation updates
+- Optionally, include an issue or ticket number for tracking (e.g., feat/issue-55-add-auth).
 
 ### Examples:
 
@@ -74,12 +69,18 @@ docs/improve-readme
 
 ## Code Formatting
 
-Consistent code formatting improves readability and maintainability. We use black to format our code automatically. You can use the default black configuration with max_line_length=79 and we use double quotes everywhere. and we target for python3.11.
-We also want the most optimial code linting and that is ensured by flake8. Before pushing you can check by performing
-```
-python3 -m flake8
-```
+Consistent code formatting improves readability and maintainability. Follow these rules:
 
----
+Use [black](https://black.readthedocs.io/en/stable/) for automatic code formatting.
+   -Default configuration with `max_line_length=79` and double quotes.
+  -Target Python 3.11 compatibility.
+
+Use [flake8](https://flake8.pycqa.org/) for linting to ensure code quality.
+   -Run `flake8` to catch unused variables and other issues.
+   -Check for adherence to PEP 8 and best practices.
+
+Before pushing your code, run the following commansd:
+python3 -m black .  # Formats code
+python3 -m flake8   # Runs lint checks
 
 By following this style guide, you contribute to a consistent and maintainable codebase, making it easier for everyone to collaborate and improve the project. Thank you for your contributions!

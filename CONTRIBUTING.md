@@ -20,15 +20,16 @@ Please read and adhere to our [Code of Conduct](CODE_OF_CONDUCT.md). By particip
 ## How to Contribute
 
 You can contribute in several ways:
-- Reporting bugs
-- Suggesting features or enhancements
+- [Reporting bugs](https://github.com/GNOME-Nepal/site-server/issues/new?assignees=rex9840%2Cn1rjal%2CSailesh-Singh&labels=bug&projects=&template=BUG-REPORT.yml)
+- [Suggesting features](https://github.com/GNOME-Nepal/site-server/issues/new?assignees=rex9840%2Cn1rjal%2CSailesh-Singh&labels=feature%2Cenhancement%2Cquestion&projects=&template=FEATURE-REQUEST.yml)
+- [Suggesting Enchancements and improvements](https://github.com/GNOME-Nepal/site-server/issues/new?assignees=rex9840%2Cn1rjal%2CSailesh-Singh&labels=enhancement%2Cquestion&projects=&template=IMPROVEMENTS.yml)
 - Writing or improving documentation
 - Submitting bug fixes or enhancements
 
 ## Getting Started
 
 1. **Fork the repository:**
-   Fork the repository to your GitHub account by clicking the "Fork" button on the repository page.
+   [Click here to fork the repository](https://github.com/GNOME-Nepal/site-server/fork)
 
 
 2. **Clone the forked repository:**
@@ -38,7 +39,7 @@ You can contribute in several ways:
    ```
 
 3. Setup env
-You can setup env by copying the env.example file and updating its entry to match your local settings.
+Set up environment variables env by copying the env.example file and updating its entries to match your local settings.
 ```bash
 cp env.example .env
 ```
@@ -56,7 +57,7 @@ cp env.example .env
 ## Development Workflow
 
 1. **Keep your fork up to date:**
-You can sync the fork using this way in github's UI
+You can sync the fork using Github's UI
 ![Sync the fork using github's UI](assets/sync_the_fork.png)
 
 
@@ -64,25 +65,25 @@ You can sync the fork using this way in github's UI
    Implement your changes in the relevant files.
 
 3. **Test your changes:**
-    Ensure your changes work as intended and do not introduce new issues. Make sure that the docker image thus created is runnable and doesn't create furthure issues furing build or any production cases.
+    Ensure your changes work as intended and do not introduce new issues. Make sure that the Docker image thus created is runnable and doesn't cause furthur issues during build or in production.
 
 4. **Lint your changes:**
     Inside the virtual environment, use the following commands
     ```
-    python -m black . # this will format your code to meet our coding standards
-    python -m flake8 # this will tell you about unused variables and linitng issues that you will need to improve.
+    python -m black . # Formats your code to meet our coding standards
+    python -m flake8  # Identifies unused variables and linting issues
     ```
 
-    Please note that our workflow will ignore your changes if it doesn't run or linting is missing. If you want any help with that, please create a PR and then ask the help from maintainer.
+    Please note that our workflow will ignore your changes if it doesn't run or if linting is failing. If you need any help with that, feel free to create a PR and ask the help from maintainer.
 
 
-4. **Commit your changes:**
+5. **Commit your changes:**
    ```bash
    git add .
    git commit -m "Description of the changes"
    ```
 
-5. **Push your changes:**
+6. **Push your changes:**
    ```bash
    git push origin your-branch-name
    ```
