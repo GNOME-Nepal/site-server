@@ -1,4 +1,4 @@
-name: Build and Push Docker Image
+name: Build and Push Nightly docker image
 
 on:
   push:
@@ -22,10 +22,23 @@ jobs:
       - name: Log in to GitHub Container Registry
         run: echo "${{ secrets.CR_PAT }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
 
-      - name: Build the Docker image
+      # Step 3: Sync Backend Image
+      - name: Build, Tag, and Push Backend Image
         run: |
-          docker build . -t ghcr.io/$REPOSITORY_LC/gnome-nepal-backend:latest
-
-      - name: Push the Docker image
-        run: |
+          docker compose build app
+          docker tag gnome_backend:nightly ghcr.io/${{ github.repository_owner }}/gnome-nepal-backend:${{ env.IMAGE_TAG }}
+          docker push ghcr.io/$REPOSITORY_LC/gnome-nepal-backend:${{ env.IMAGE_TAG }}
           docker push ghcr.io/$REPOSITORY_LC/gnome-nepal-backend:latest
+        env:
+          IMAGE_TAG: '${{ secrets.IMAGE_TAG }}'
+
+
+      # Step 4: Sync Worker Image
+      - name: Build, Tag, and Push Worker Image
+        run: |
+          docker compose build worker_beat
+          docker tag gnome-worker-beat:nightly ghcr.io/${{ github.repository_owner }}/gnome-nepal-worker-beat:${{ env.IMAGE_TAG }}
+          docker push ghcr.io/$REPOSITORY_LC/gnome-nepal-worker-beat:${{ env.IMAGE_TAG }}
+          docker push ghcr.io/$REPOSITORY_LC/gnome-nepal-worker-beat:latest
+        env:
+          IMAGE_TAG: '${{ secrets.IMAGE_TAG }}'

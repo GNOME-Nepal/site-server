@@ -5,6 +5,8 @@ services:
     build:
       context: .
       target: $DOCKERFILE_TARGET
+      tags:
+        - "gnome-backend:nightly"
     volumes:
       - gnome_data:/app/
       - .:/app
@@ -22,6 +24,8 @@ services:
     build:
       context: .
       target: worker
+      tags:
+        - "gnome-worker-beat:nightly"
     command: ["/bin/sh", "-c", "celery -A core  worker -l info --concurrency=1"]
     volumes:
       - gnome_data:/app/
