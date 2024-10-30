@@ -25,7 +25,7 @@ jobs:
       # Step 3: Sync Backend Image
       - name: Build, Tag, and Push Backend Image
         run: |
-          docker build --target production -t gnome-nepal-backend:nightly
+          docker build --target production -t gnome-nepal-backend:nightly .
           docker tag gnome-backend-app:nightly ghcr.io/$REPOSITORY_LC/gnome-nepal-backend:nightly
           docker push ghcr.io/$REPOSITORY_LC/gnome-nepal-backend:nightly
 
@@ -33,6 +33,6 @@ jobs:
       # Step 4: Sync Worker Image
       - name: Build, Tag, and Push Worker Image
         run: |
-          docker build --target worker -t gnome-nepal-worker-beat:nightly
+          docker build --target worker -t gnome-nepal-worker-beat:nightly .
           docker tag gnome-worker-beat:nightly ghcr.io/$REPOSITORY_LC/gnome-nepal-worker-beat:nightly
           docker push ghcr.io/$REPOSITORY_LC/gnome-nepal-worker-beat:nightly
