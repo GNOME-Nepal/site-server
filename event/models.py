@@ -2,6 +2,7 @@ from datetime import datetime
 from uuid import uuid4
 
 from django.core.exceptions import ValidationError
+from django.core.validators import RegexValidator
 from django.db import models
 from django.utils.text import slugify
 
@@ -42,6 +43,7 @@ class Event(models.Model):
     start_date = models.DateField(blank=False, null=False)
     end_date = models.DateField(blank=False, null=False)
     description = models.TextField(blank=False, null=False)
+    requires_registration = models.BooleanField(default=False)
     rsvp_url = models.URLField(max_length=500, null=True, blank=True)
     image = models.ImageField(
         upload_to="%Y/%m/%d/events", null=True, blank=True
@@ -162,6 +164,13 @@ class Event(models.Model):
                     "Registration deadline must be less than start date."
                 )
 
+        """
+        validation if the participants exceeds the maximum capacity"""
+        if self.participants.count() > self.max_capacity:
+            raise ValidationError(
+                "Participants cannot be more than the maximum capacity"
+            )
+
     def save(self, *args, **kwargs):
         """
         We are overriding events save model
@@ -246,3 +255,48 @@ class EventImage(models.Model):
 
     class Meta:
         ordering = ["position"]
+
+
+class Participant(models.Model):
+    first_name = models.CharField(max_length=255)
+    last_name = models.CharField(max_length=255)
+    email = models.EmailField(max_length=255)
+    academy = models.CharField(max_length=255, blank=True)
+    phone_number = models.CharField(
+        max_length=14,
+        validators=[
+            RegexValidator(
+                # makes sure the it is at least 10 and no more than 14
+                regex=r"^\+?[0-9]{10,14}$",
+                message=(
+                    "Phone number must be 10 digit",
+                    "long and  Up to 14 digits allowed including +977",
+                ),
+            )
+        ],
+    )
+    events = models.ForeignKey(
+        Event,
+        related_name="participants",
+        on_delete=models.CASCADE,
+        blank=False,
+        null=False,
+    )
+    age = models.IntegerField(null=False, blank=False)
+
+    def clean(self):
+        """
+        Do not allow saving the participant if the event is full.
+        """
+        if self.events.participants.count() >= self.events.max_capacity:
+            raise ValidationError("Event is full")
+        if not self.events:
+            raise ValidationError("Event is required")
+
+    def save(self, *args, **kwargs):
+        # Call clean() before saving
+        self.clean()
+        super().save(*args, **kwargs)
+
+    def __str__(self):
+        return self.first_name + " " + self.last_name
