@@ -1,0 +1,145 @@
+{
+    "intents": [
+      {
+        "tag": "greeting",
+        "patterns": [
+          "Hi",
+          "Hey",
+          "How are you",
+          "Is anyone there?",
+          "Hello",
+          "Good day"
+        ],
+        "responses": [
+          "Hey :-)",
+          "Hello, thanks for visiting",
+          "Hi there, what can I do for you?",
+          "Hi there, how can I help?"
+        ]
+      },
+      {
+        "tag": "goodbye",
+        "patterns": ["Bye", "See you later", "Goodbye"],
+        "responses": [
+          "See you later, thanks for visiting",
+          "Have a nice day",
+          "Bye! Come back again soon."
+        ]
+      },
+      {
+        "tag": "thanks",
+        "patterns": ["Thanks", "Thank you", "That's helpful", "Thank's a lot!"],
+        "responses": ["Happy to help!", "Any time!", "My pleasure"]
+      },
+      {
+        "tag": "Gnome Nepal",
+        "patterns": [
+          "What is Gnome nepal?"
+        ],
+        "responses": [
+          "GNOME Nepal is an organization dedicated to promoting open-source initiatives within Nepal. Our core objective is to foster a vibrant community where technology enthusiasts, developers, and open-source advocates can collaborate, share knowledge, and contribute."
+        ]
+      },
+      {
+        "tag": "Open Source",
+        "patterns":[
+          "What is Open Source ?",
+          "What is Open Source Software ?",
+          "What are the benefits of open-source software?",
+          "Can open-source software be used commercially?",
+          "How can I start contributing to open source?",
+          "Where can I find open-source projects to contribute to?"
+        ],
+        "responses":[
+          "Open-source software is software made available under a license that allows users to freely use, study, modify, and share its source code.",
+          "Yes, open-source software is generally secure because many developers review the code. However, security depends on active maintenance.",
+          "Benefits of open-source software include transparency, flexibility, security, cost-effectiveness, and a strong community.",
+          "Yes, many companies use and modify open-source software for commercial purposes. Some examples include Android and Red Hat Linux.",
+          "You can start by exploring beginner-friendly repositories on GitHub or joining open-source communities like GNOME Nepal!",
+          "Websites like GitHub, GitLab, and Open Source Initiative list projects you can contribute to. Want me to share some links?"
+        ]
+      },
+      {
+        "tag": "Community",
+        "patterns": [
+          "can I join this community? ",
+          "What are the eligibility to join this community?"
+        ],
+        "responses": [
+          "You can join us by connecting through our Discord!",
+          "You just have interest in open source"
+        ]
+      },
+      {
+        "tag": "Contribute",
+        "patterns": [
+          "Can I contribute to community ?",
+          "How can I contribute?",
+          "Can I connect to other contributers?",
+          "Do I need coding skills to contribute?",
+          "What are the benefits of contributing?",
+          "How can I report issues or suggest improvements?"
+        ],
+        "responses": [
+          "Absolutely, we welcome your contributions!",
+          "Yes, you can contribute as a developer by fixing bugs, adding features, and reviewing code. Want me to share some beginner-friendly issues?",
+          "Not at all! You can contribute through documentation, translations, event organization, or even user support!",
+          "Of course! Non-coding contributions include translations, documentation writing, testing, and community engagement.",
+          "Beginner-friendly tasks can be found in our issues section on GitHub. Want me to share the link?",
+          "Yes! You can join our contributor channels on Discord, Telegram, or our mailing list.",
+          "Yes, we have a mentorship program! Experienced contributors help guide new members. Would you like to be introduced to a mentor?",
+          "Contributing helps you learn, build connections, and improve your skills. You also get recognized in the open-source community!",
+          "You can report issues on our GitHub repository or discuss improvements in the community forum. Want the links?"
+        ]
+      },
+      {
+        "tag": "events",
+        "patterns": [
+          "Are there any exciting events",
+          "What events are happening soon?",
+          "Tell me about upcoming events.",
+          "Are there any tech meetups?",
+          "Where can I find open-source events?",
+          "Any hackathons happening?",
+          "Are there any developer conferences coming up?",
+          "How can I join an event?",
+          "Are there virtual events I can attend?",
+          "Can I organize an event in the community?"
+        ],
+        "responses": [
+          "Yes! There are many exciting events happening. Would you like to know about tech meetups, hackathons, or conferences?",
+          "Check out the latest events in our community! You can find details on our official website or social media.",
+          "We regularly organize meetups and workshops. Stay tuned for announcements!",
+          "There are several upcoming hackathons and coding challenges. Want me to share links?",
+          "If you're interested in open-source events, platforms like Dev.to, GitHub, and Meetup have great listings!",
+          "You can join most events by registering online. Let me know if you need event links!",
+          "Yes! We have both online and offline events. Would you like details on virtual or in-person events?",
+          "Absolutely! If you want to organize an event, let’s connect you with the community team!"
+        ]
+      },
+      {
+        "tag": "mentors",
+        "patterns":[
+          "I have an issue with GNOME, can you help?",
+          "How do I install GNOME on Linux?",
+          "Where can I report a bug?"
+        ],
+        "responses":[
+          "You can check the official GNOME documentation for troubleshooting steps.",
+          "To report bugs, visit GNOME's GitLab and submit an issue."
+        ]
+      },
+      {
+        "tag": "funny",
+        "patterns": [
+          "Tell me a joke!",
+          "Tell me something funny!",
+          "Do you know a joke?"
+        ],
+        "responses": [
+          "Why did the hipster burn his mouth? He drank the coffee before it was cool.",
+          "What did the buffalo say when his son left for college? Bison."
+        ]
+      }
+    ]
+  }

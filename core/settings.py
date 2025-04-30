@@ -8,6 +8,7 @@ https://docs.djangoproject.com/en/5.0/topics/settings/
 
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
+
 """
 
 import os
@@ -64,6 +65,7 @@ INSTALLED_APPS = [
     "event",
     "nested_admin",
     "healthcheck",
+    "chatbot",
 ]
 
 MIDDLEWARE = [
@@ -99,6 +101,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = "core.wsgi.application"
+ASGI_APPLICATION = 'core.asgi.application'
 
 
 DATABASES = {
