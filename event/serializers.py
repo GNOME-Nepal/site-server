@@ -35,12 +35,19 @@ class ScheduleSerializer(serializers.ModelSerializer):
         fields = "__all__"
 
 
+class ParticipantsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.Participant
+        fields = "__all__"
+
+
 class EventSerializer(serializers.ModelSerializer):
     event_type = serializers.StringRelatedField()
     location = EventLocationSerializer()
     hot_topics = serializers.StringRelatedField(many=True)
     schedules = ScheduleSerializer(many=True)
     images = serializers.SerializerMethodField(read_only=True)
+    participants = ParticipantsSerializer(many=True)
 
     def get_images(self, obj):
         """
