@@ -45,7 +45,7 @@ mypy-extensions==1.0.0
 nodeenv==1.9.1
 packaging==24.1
 pathspec==0.12.1
-pillow==11.0.0
+pillow==13.0.0
 platformdirs==4.3.6
 pre_commit==4.0.1
 prompt_toolkit==3.0.47
